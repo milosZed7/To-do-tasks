@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.app-container {
+    margin-top: 10px;
+}
+
+.column-list,
+.item-container-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-block {
+    height: 80px;
+    width: 400px;
+    background-color: rgba(6, 55, 254, 0.76);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+.list-item {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(10, 178, 249, 0.24);
+    height: 50px;
+    border-radius: 5px;
+    user-select: none;
+    box-sizing: border-box;
+    animation: showItem 0.2s ease-in;
+}
+
+.list-item-done {
+    background-color: rgb(147, 245, 147);
+    color: rgb(255, 68, 0);
+}
+
+.list-item-in-progress {
+    background-color: rgb(241, 106, 60);
+    color: rgb(255, 255, 255);
+}
+
+.list-item-to-do {
+    background-color: rgba(50, 108, 131, 0.24);
+    color: rgb(11, 12, 68);
+}
+
+.item-container {
+    min-height: 200px;
+    width: 400px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 0 0 5px 5px;
+    user-select: none;
+}
+
+.list-item:hover {
+    transform: scale(1.02);
+    transition: transform 0.15s ease-in;
+    border: 1px dashed #ccc;
+    cursor: move;
+}
+
+.list-item:active {
+    cursor: -webkit-grabbing;
+}
+
+.list-item:-webkit-drag {
+    /* background-color: rgb(4, 12, 122); */
+    /* color: white; */
+    font-weight: bold;
+}
+
+.on-drag-over {
+    border: 3px dashed lightgreen;
+}
+
+.item-input {
+    margin: 10px 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+.item-input:focus {
+    border-color: rgba(10, 178, 249, 0.24);
+}
+
+.no-items-in-list {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 20px;
+    color: #ccc;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@keyframes showItem {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.list-item-remove {
+    animation: reduceItem 0.4s ease-in forwards;
+}
+
+@keyframes reduceItem {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+.new-task-placeholder {
+    background-color: white;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 3px;
+    border: 2px dashed #ccc;
+}
